@@ -1,0 +1,16 @@
+BACKTRACKING GRAPH COLORING
+
+Input: Conflict graph G = (V, E)
+Output: Valid coloring using minimum number of colors
+
+1. Sort vertices in descending degree order.
+2. For k = 1 to |V|:
+3.     Initialize empty color assignment.
+4.     Try assigning colors 1..k to each vertex.
+5.     Before assigning a color, check all adjacent vertices.
+6.     If no adjacent vertex has this color:
+7.         Assign it and recursively color next vertex.
+8.     If recursion fails, remove assignment (backtrack).
+9.     If all vertices colored:
+10.        Return coloring and k.
+11. Return failure if no assignment found.
